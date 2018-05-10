@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 @Setter //Gera todos os SET's
 @Entity
 @Table(name = "category") //para adicionar nome da tabela diferente da classe
-public class Category {
+public class    Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "category_id_seq")

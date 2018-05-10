@@ -15,6 +15,4 @@ public class CategoryService extends AbstractService<Category> {
     public List<Category> listarPorOrdemAlfabetica(){
         return categoryRepository.findAllByOrderByNomeAsc();
     }
-
-
 }
