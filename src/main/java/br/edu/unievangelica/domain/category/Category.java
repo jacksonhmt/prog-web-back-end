@@ -1,5 +1,7 @@
 package br.edu.unievangelica.domain.category;
 
+import br.edu.unievangelica.domain.product.Product;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -7,6 +9,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Getter //Gera todos os GET's
 @Setter //Gera todos os SET's
@@ -24,4 +27,8 @@ public class    Category {
     @NotEmpty //validar strings vazias
     @Size(max = 50) //pode adicionar max e min exem: (max = 50, min = 10)
     private String nome;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private List<Product> products;
 }

@@ -1,5 +1,8 @@
 package br.edu.unievangelica.domain.product;
 
+import br.edu.unievangelica.domain.category.Category;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -36,8 +39,6 @@ public class Product {
     @NotNull
     private float preco;
 
-//    @NotNull
-//    @ManyToOne
-//    @JoinColumn(name = "category_id", referencedColumnName = "id")
-//    private Category category;
+    @ManyToOne
+    private Category category;
 }
