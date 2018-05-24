@@ -12,7 +12,4 @@ public interface ProvinciaRepository extends JpaRepository<Provincia, Long> {
 
     @Query("SELECT p FROM Provincia p WHERE pais.id =:pais_id ORDER BY nome ASC")
     public List<Provincia> listarPorPais(@Param("pais_id") long pais_id);
-
-//    @Query("SELECT DISTINCT 'tem' FROM Municipio m WHERE provincia.id=:provincia_id")
-//    public String verificaVinculo(@Param("provincia_id") long provincia_id);
 }

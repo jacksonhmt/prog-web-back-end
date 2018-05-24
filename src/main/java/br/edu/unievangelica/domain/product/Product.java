@@ -1,8 +1,6 @@
 package br.edu.unievangelica.domain.product;
 
 import br.edu.unievangelica.domain.category.Category;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -23,9 +21,9 @@ public class Product {
     @Column(name = "id")
     private long id;
 
-    @NotNull //validar campos NULL
-    @NotEmpty //validar strings vazias
-    @Size(max = 80) //pode adicionar max e min exem: (max = 50, min = 10)
+    @NotNull
+    @NotEmpty
+    @Size(max = 80)
     private String nome;
 
     @NotNull
